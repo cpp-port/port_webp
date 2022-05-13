@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <SOLibPaths>C:\basis\source\third\webp\storage-android\third\library\x86\Debug\libaura_webp.a;C:\archive\android-ndk-r23b\prebuilt\android-x86\gdbserver\gdbserver;C:\archive\android-ndk-r23b\sources\cxx-stl\llvm-libc++\libs\x86\libc++_shared.so</SOLibPaths>
+  <AndroidLibPaths />
+  <OObjPaths />
+  <Configuration>Debug</Configuration>
+  <Platform>x86</Platform>
+  <AndroidArchitecture>x86</AndroidArchitecture>
+  <!--links to other recipe files-->
+  <RecipeFiles />
+</project>
