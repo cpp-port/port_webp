@@ -537,7 +537,7 @@ Advanced Decoding API:
 WebP decoding supports an advanced API which provides on-the-fly cropping and
 rescaling, something of great usefulness on memory-constrained environments like
 mobile phones. Basically, the memory usage will scale with the output's size,
-not the input's, when one only needs a quick preview or a zoomed in portion of
+not the input's, when one only needs a quick thumbnail or a zoomed in portion of
 an otherwise too-large picture. Some CPU can be saved too, incidentally.
 
 -------------------------------------- BEGIN PSEUDO EXAMPLE
