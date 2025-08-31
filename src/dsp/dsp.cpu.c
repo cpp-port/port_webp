@@ -15,7 +15,7 @@
 
 #if defined(__ANDROID__)
 #if defined(WEBP_ANDROID_NEON)  // NB: needs to be before generic NEON test.
-#include <android/cpu-features.h>   // modern header location in NDK r21+
+#include <android/cpu-features.h>
 #endif
 #endif
 

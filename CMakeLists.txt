@@ -10,6 +10,7 @@ if (MSVC)
 endif ()
 
 
+
 list(APPEND library_source
         src/dec/dec.alpha.c
         src/dec/dec.buffer.c
