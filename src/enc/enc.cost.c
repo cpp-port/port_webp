@@ -11,7 +11,7 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./cost.h"
+#include "port_webp/enc/cost.h"
 
 //------------------------------------------------------------------------------
 // Level cost tables

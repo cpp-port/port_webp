@@ -14,7 +14,7 @@
 
 #include <assert.h>
 
-#include "./quant_levels.h"
+#include "port_webp/utils/quant_levels.h"
 
 #define NUM_SYMBOLS     256
 

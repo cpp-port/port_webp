@@ -12,7 +12,7 @@
 // Author(s): Branimir Vasic (branimir.vasic@imgtec.com)
 //            Djordje Pesut  (djordje.pesut@imgtec.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(WEBP_USE_MIPS_DSP_R2)
 

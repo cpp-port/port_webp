@@ -14,11 +14,11 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./quant_levels_dec.h"
+#include "port_webp/utils/quant_levels_dec.h"
 
 #include <string.h>   // for memset
 
-#include "./utils.h"
+#include "port_webp/utils/utils.h"
 
 // #define USE_DITHERING   // uncomment to enable ordered dithering (not vital)
 

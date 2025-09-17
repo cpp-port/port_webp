@@ -12,8 +12,8 @@
 // Author: somnath@google.com (Somnath Banerjee)
 
 #include <assert.h>
-#include "./vp8enci.h"
-#include "../dsp/dsp.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/dsp/dsp.h"
 
 // This table gives, for a given sharpness, the filtering strength to be
 // used (at least) in order to filter a given edge step delta.

@@ -12,7 +12,7 @@
 // Author: somnath@google.com (Somnath Banerjee)
 //         cduvivier@google.com (Christian Duvivier)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(WEBP_USE_SSE2)
 
@@ -21,7 +21,7 @@
 // #define USE_TRANSFORM_AC3
 
 #include <emmintrin.h>
-#include "../dec/vp8i.h"
+#include "port_webp/dec/vp8i.h"
 
 //------------------------------------------------------------------------------
 // Transforms (Paragraph 14.4)

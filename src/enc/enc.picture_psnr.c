@@ -13,7 +13,7 @@
 
 #include <math.h>
 
-#include "./vp8enci.h"
+#include "port_webp/enc/vp8enci.h"
 
 //------------------------------------------------------------------------------
 // local-min distortion

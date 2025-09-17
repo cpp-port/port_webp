@@ -15,7 +15,7 @@
 #define WEBP_UTILS_THREAD_H_
 
 #ifdef HAVE_CONFIG_H
-#include "../webp/config.h"
+#include "port_webp/config.h"
 #endif
 
 #include "../webp/types.h"

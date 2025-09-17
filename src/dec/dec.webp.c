@@ -13,10 +13,10 @@
 
 #include <stdlib.h>
 
-#include "./vp8i.h"
-#include "./vp8li.h"
-#include "./webpi.h"
-#include "../webp/mux_types.h"  // ALPHA_FLAG
+#include "port_webp/dec/vp8i.h"
+#include "port_webp/dec/vp8li.h"
+#include "port_webp/dec/webpi.h"
+#include "port_webp/webp/mux_types.h"  // ALPHA_FLAG
 
 //------------------------------------------------------------------------------
 // RIFF layout is:

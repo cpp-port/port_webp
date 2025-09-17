@@ -11,11 +11,11 @@
 //
 // Author(s): Djordje Pesut (djordje.pesut@imgtec.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(WEBP_USE_MIPS_DSP_R2)
 
-#include "../utils/rescaler.h"
+#include "port_webp/utils/rescaler.h"
 
 static void ImportRow(WebPRescaler* const wrk,
                       const uint8_t* const src, int channel) {

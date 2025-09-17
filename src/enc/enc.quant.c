@@ -15,8 +15,8 @@
 #include <math.h>
 #include <stdlib.h>  // for abs()
 
-#include "./vp8enci.h"
-#include "./cost.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/enc/cost.h"
 
 #define DO_TRELLIS_I4  1
 #define DO_TRELLIS_I16 1   // not a huge gain, but ok at low bitrate.

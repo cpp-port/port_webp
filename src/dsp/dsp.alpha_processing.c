@@ -12,7 +12,7 @@
 // Author: Skal (pascal.massimino@gmail.com)
 
 #include <assert.h>
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 // Tables can be faster on some platform but incur some extra binary size (~2k).
 // #define USE_TABLES_FOR_ALPHA_MULT

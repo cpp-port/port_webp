@@ -11,7 +11,7 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./yuv.h"
+#include "port_webp/dsp/yuv.h"
 
 #if defined(WEBP_USE_SSE2)
 
@@ -26,7 +26,7 @@ typedef union {   // handy struct for converting SSE2 registers
 
 #if defined(WEBP_YUV_USE_SSE2_TABLES)
 
-#include "./yuv_tables_sse2.h"
+#include "port_webp/dsp/yuv_tables_sse2.h"
 
 WEBP_TSAN_IGNORE_FUNCTION void VP8YUVInitSSE2(void) {}
 

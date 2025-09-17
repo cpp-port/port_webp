@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(webp CXX)
+project(port_webp CXX)
 
 
 if (MSVC)
@@ -10,9 +10,28 @@ if (MSVC)
 endif ()
 
 
-
 list(APPEND library_source
-        src/dec/dec.alpha.c
+
+   src/dsp/dsp.upsampling_mips_dsp_r2.c
+   src/dsp/dsp.enc_mips32.c
+   src/dsp/dsp.lossless_mips_dsp_r2.c
+   src/dsp/dsp.rescaler_mips_dsp_r2.c
+   src/dsp/dsp.lossless_mips32.c
+   src/dsp/dsp.filters_mips_dsp_r2.c
+   src/dsp/dsp.enc_mips_dsp_r2.c
+   src/dsp/dsp.argb_mips_dsp_r2.c
+   src/dsp/dsp.cost_mips32.c
+   src/dsp/dsp.cost_mips_dsp_r2.c
+   src/dsp/dsp.dec_mips32.c
+   src/dsp/dsp.dec_mips_dsp_r2.c
+   src/dsp/dsp.rescaler_mips32.c
+   src/dsp/dsp.yuv_mips_dsp_r2.c
+   src/dsp/dsp.upsampling_neon.c
+   src/dsp/dsp.enc_neon.c
+   src/dsp/dsp.dec_neon.c
+   src/dsp/dsp.upsampling_sse2.c
+
+   src/dec/dec.alpha.c
         src/dec/dec.buffer.c
         src/dec/dec.frame.c
         src/dec/dec.idec.c
@@ -27,52 +46,34 @@ list(APPEND library_source
         src/dsp/dsp.alpha_processing_mips_dsp_r2.c
         src/dsp/dsp.alpha_processing_sse2.c
         src/dsp/dsp.argb.c
-        src/dsp/dsp.argb_mips_dsp_r2.c
         src/dsp/dsp.argb_sse2.c
         src/dsp/dsp.cost.c
-        src/dsp/dsp.cost_mips32.c
-        src/dsp/dsp.cost_mips_dsp_r2.c
         src/dsp/dsp.cost_sse2.c
         src/dsp/dsp.cpu.c
         src/dsp/dsp.dec.c
         src/dsp/dsp.dec_clip_tables.c
-        src/dsp/dsp.dec_mips32.c
-        src/dsp/dsp.dec_mips_dsp_r2.c
-        src/dsp/dsp.dec_neon.c
         src/dsp/dsp.dec_sse2.c
         src/dsp/dsp.enc.c
         src/dsp/dsp.enc_avx2.c
-        src/dsp/dsp.enc_mips32.c
-        src/dsp/dsp.enc_mips_dsp_r2.c
-        src/dsp/dsp.enc_neon.c
         src/dsp/dsp.enc_sse2.c
         src/dsp/dsp.filters.c
-        src/dsp/dsp.filters_mips_dsp_r2.c
         src/dsp/dsp.filters_sse2.c
-        src/dsp/dsp.h
+   include/port_webp/dsp/dsp.h
         src/dsp/dsp.lossless.c
-        src/dsp/dsp.lossless_mips32.c
-        src/dsp/dsp.lossless_mips_dsp_r2.c
         src/dsp/dsp.lossless_neon.c
         src/dsp/dsp.lossless_sse2.c
         src/dsp/dsp.rescaler.c
-        src/dsp/dsp.rescaler_mips32.c
-        src/dsp/dsp.rescaler_mips_dsp_r2.c
         src/dsp/dsp.upsampling.c
-        src/dsp/dsp.upsampling_mips_dsp_r2.c
-        src/dsp/dsp.upsampling_neon.c
-        src/dsp/dsp.upsampling_sse2.c
         src/dsp/dsp.yuv.c
         src/dsp/dsp.yuv_mips32.c
-        src/dsp/dsp.yuv_mips_dsp_r2.c
         src/dsp/dsp.yuv_sse2.c
-        src/dsp/lossless.h
-        src/dsp/mips_macro.h
-        src/dsp/neon.h
-        src/dsp/yuv.h
-        src/dsp/yuv_tables_sse2.h
-        src/enc/backward_references.h
-        src/enc/cost.h
+   include/port_webp/dsp/lossless.h
+   include/port_webp/dsp/mips_macro.h
+   include/port_webp/dsp/neon.h
+   include/port_webp/dsp/yuv.h
+   include/port_webp/dsp/yuv_tables_sse2.h
+   include/port_webp/enc/backward_references.h
+   include/port_webp/enc/cost.h
         src/enc/enc.alpha.c
         src/enc/enc.analysis.c
         src/enc/enc.backward_references.c
@@ -94,32 +95,32 @@ list(APPEND library_source
         src/enc/enc.tree.c
         src/enc/enc.vp8l.c
         src/enc/enc.webpenc.c
-        src/enc/histogram.h
-        src/enc/vp8enci.h
-        src/enc/vp8li.h
+   include/port_webp/enc/histogram.h
+   include/port_webp/enc/vp8enci.h
+   include/port_webp/enc/vp8li.h
         src/mux/mux.anim_encode.c
         src/mux/mux.muxedit.c
         src/mux/mux.muxinternal.c
         src/mux/mux.muxread.c
-        src/mux/muxi.h
-        src/utils/bit_reader.h
-        src/utils/bit_reader_inl.h
-        src/utils/bit_writer.h
-        src/utils/color_cache.h
-        src/utils/endian_inl.h
-        src/utils/filters.h
-        src/utils/huffman.h
-        src/utils/huffman_encode.h
-        src/utils/quant_levels.h
-        src/utils/quant_levels_dec.h
-        src/utils/random.h
-        src/utils/rescaler.h
-        src/utils/thread.h
+   include/port_webp/mux/muxi.h
+   include/port_webp/utils/bit_reader.h
+   include/port_webp/utils/bit_reader_inl.h
+   include/port_webp/utils/bit_writer.h
+   include/port_webp/utils/color_cache.h
+   include/port_webp/utils/endian_inl.h
+   include/port_webp/utils/filters.h
+   include/port_webp/utils/huffman.h
+   include/port_webp/utils/huffman_encode.h
+   include/port_webp/utils/quant_levels.h
+   include/port_webp/utils/quant_levels_dec.h
+   include/port_webp/utils/random.h
+   include/port_webp/utils/rescaler.h
+   include/port_webp/utils/thread.h
         src/utils/utils.bit_reader.c
         src/utils/utils.bit_writer.c
         src/utils/utils.color_cache.c
         src/utils/utils.filters.c
-        src/utils/utils.h
+   include/port_webp/utils/utils.h
         src/utils/utils.huffman.c
         src/utils/utils.huffman_encode.c
         src/utils/utils.quant_levels.c
@@ -128,19 +129,17 @@ list(APPEND library_source
         src/utils/utils.rescaler.c
         src/utils/utils.thread.c
         src/utils/utils.utils.c
-        src/webp/decode.h
-        src/webp/demux.h
-        src/webp/encode.h
-        src/webp/format_constants.h
-        src/webp/mux.h
-        src/webp/mux_types.h
-        src/webp/types.h
+        include/port_webp/webp/decode.h
+   include/port_webp/webp/demux.h
+   include/port_webp/webp/encode.h
+   include/port_webp/webp/format_constants.h
+   include/port_webp/webp/mux.h
+   include/port_webp/webp/mux_types.h
+   include/port_webp/webp/types.h
 )
 
 
 add_library(${PROJECT_NAME} SHARED ${library_source})
-
-
 
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE OPJ_EXPORTS)

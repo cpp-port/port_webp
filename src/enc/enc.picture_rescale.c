@@ -14,9 +14,9 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "./vp8enci.h"
-#include "../utils/rescaler.h"
-#include "../utils/utils.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/utils/rescaler.h"
+#include "port_webp/utils/utils.h"
 
 #define HALVE(x) (((x) + 1) >> 1)
 

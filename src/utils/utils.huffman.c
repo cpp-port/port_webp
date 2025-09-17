@@ -14,9 +14,9 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <string.h>
-#include "./huffman.h"
-#include "../utils/utils.h"
-#include "../webp/format_constants.h"
+#include "port_webp/utils/huffman.h"
+#include "port_webp/utils/utils.h"
+#include "port_webp/webp/format_constants.h"
 
 // Huffman data read via DecodeImageStream is represented in two (red and green)
 // bytes.

@@ -11,7 +11,7 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./yuv.h"
+#include "port_webp/dsp/yuv.h"
 
 #if defined(WEBP_YUV_USE_TABLE)
 

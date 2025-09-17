@@ -11,14 +11,14 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(WEBP_USE_SSE2)
 #include <emmintrin.h>
 
-#include "../enc/cost.h"
-#include "../enc/vp8enci.h"
-#include "../utils/utils.h"
+#include "port_webp/enc/cost.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/utils/utils.h"
 
 //------------------------------------------------------------------------------
 

@@ -11,7 +11,7 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #define USE_STATIC_TABLES     // undefine to have run-time table initialization
 

@@ -15,10 +15,10 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "./alphai.h"
-#include "./webpi.h"
-#include "./vp8i.h"
-#include "../utils/utils.h"
+#include "port_webp/dec/alphai.h"
+#include "port_webp/dec/webpi.h"
+#include "port_webp/dec/vp8i.h"
+#include "port_webp/utils/utils.h"
 
 // In append mode, buffer allocations increase as multiples of this value.
 // Needs to be a power of 2.

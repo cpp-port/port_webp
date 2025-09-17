@@ -11,7 +11,7 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./vp8i.h"
+#include "port_webp/dec/vp8i.h"
 
 static WEBP_INLINE int clip(int v, int M) {
   return v < 0 ? 0 : v > M ? M : v;

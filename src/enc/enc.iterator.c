@@ -13,7 +13,7 @@
 
 #include <string.h>
 
-#include "./vp8enci.h"
+#include "port_webp/enc/vp8enci.h"
 
 //------------------------------------------------------------------------------
 // VP8Iterator

@@ -16,9 +16,9 @@
 
 #include <stdlib.h>
 
-#include "../dsp/lossless.h"
-#include "../utils/utils.h"
-#include "./vp8enci.h"
+#include "port_webp/dsp/lossless.h"
+#include "port_webp/utils/utils.h"
+#include "port_webp/enc/vp8enci.h"
 
 #define MIN_DIM_FOR_NEAR_LOSSLESS 64
 #define MAX_LIMIT_BITS             5

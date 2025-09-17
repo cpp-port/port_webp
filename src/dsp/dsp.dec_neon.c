@@ -12,12 +12,12 @@
 // Authors: Somnath Banerjee (somnath@google.com)
 //          Johann Koenig (johannkoenig@google.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(WEBP_USE_NEON)
 
-#include "./neon.h"
-#include "../dec/vp8i.h"
+#include "port_webp/dsp/neon.h"
+#include "port_webp/dec/vp8i.h"
 
 //------------------------------------------------------------------------------
 // NxM Loading functions

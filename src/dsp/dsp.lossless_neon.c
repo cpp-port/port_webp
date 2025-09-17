@@ -11,14 +11,14 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(WEBP_USE_NEON)
 
 #include <arm_neon.h>
 
-#include "./lossless.h"
-#include "./neon.h"
+#include "port_webp/dsp/lossless.h"
+#include "port_webp/dsp/neon.h"
 
 //------------------------------------------------------------------------------
 // Colorspace conversion functions

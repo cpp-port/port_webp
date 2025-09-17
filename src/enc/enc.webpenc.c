@@ -16,10 +16,10 @@
 #include <string.h>
 #include <math.h>
 
-#include "./cost.h"
-#include "./vp8enci.h"
-#include "./vp8li.h"
-#include "../utils/utils.h"
+#include "port_webp/enc/cost.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/enc/vp8li.h"
+#include "port_webp/utils/utils.h"
 
 // #define PRINT_MEMORY_INFO
 

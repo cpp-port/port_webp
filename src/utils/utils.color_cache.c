@@ -14,8 +14,8 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <string.h>
-#include "./color_cache.h"
-#include "../utils/utils.h"
+#include "port_webp/utils/color_cache.h"
+#include "port_webp/utils/utils.h"
 
 //------------------------------------------------------------------------------
 // VP8LColorCache.

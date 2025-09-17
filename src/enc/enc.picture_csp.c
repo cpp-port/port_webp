@@ -15,10 +15,10 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "./vp8enci.h"
-#include "../utils/random.h"
-#include "../utils/utils.h"
-#include "../dsp/yuv.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/utils/random.h"
+#include "port_webp/utils/utils.h"
+#include "port_webp/dsp/yuv.h"
 
 // Uncomment to disable gamma-compression during RGB->U/V averaging
 #define USE_GAMMA_COMPRESSION

@@ -15,14 +15,14 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "./backward_references.h"
-#include "./vp8enci.h"
-#include "./vp8li.h"
-#include "../dsp/lossless.h"
-#include "../utils/bit_writer.h"
-#include "../utils/huffman_encode.h"
-#include "../utils/utils.h"
-#include "../webp/format_constants.h"
+#include "port_webp/enc/backward_references.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/enc/vp8li.h"
+#include "port_webp/dsp/lossless.h"
+#include "port_webp/utils/bit_writer.h"
+#include "port_webp/utils/huffman_encode.h"
+#include "port_webp/utils/utils.h"
+#include "port_webp/webp/format_constants.h"
 
 #define PALETTE_KEY_RIGHT_SHIFT   22  // Key for 1K buffer.
 // Maximum number of histogram images (sub-blocks).

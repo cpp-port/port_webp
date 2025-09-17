@@ -13,8 +13,8 @@
 
 #include <assert.h>
 #include <string.h>   // for memset()
-#include "./thread.h"
-#include "./utils.h"
+#include "port_webp/utils/thread.h"
+#include "port_webp/utils/utils.h"
 
 #ifdef WEBP_USE_THREAD
 

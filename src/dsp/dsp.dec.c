@@ -11,8 +11,8 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./dsp.h"
-#include "../dec/vp8i.h"
+#include "port_webp/dsp/dsp.h"
+#include "port_webp/dec/vp8i.h"
 
 //------------------------------------------------------------------------------
 

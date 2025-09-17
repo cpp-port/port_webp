@@ -11,15 +11,15 @@
 //
 // Author: Christian Duvivier (cduvivier@google.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(WEBP_USE_SSE2)
 #include <stdlib.h>  // for abs()
 #include <emmintrin.h>
 
-#include "../enc/cost.h"
-#include "../enc/vp8enci.h"
-#include "../utils/utils.h"
+#include "port_webp/enc/cost.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/utils/utils.h"
 
 //------------------------------------------------------------------------------
 // Quite useful macro for debugging. Left here for convenience.

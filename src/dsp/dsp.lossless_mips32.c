@@ -12,8 +12,8 @@
 // Author(s):  Djordje Pesut    (djordje.pesut@imgtec.com)
 //             Jovan Zelincevic (jovan.zelincevic@imgtec.com)
 
-#include "./dsp.h"
-#include "./lossless.h"
+#include "port_webp/dsp/dsp.h"
+#include "port_webp/dsp/lossless.h"
 
 #if defined(WEBP_USE_MIPS32)
 

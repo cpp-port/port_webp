@@ -13,10 +13,10 @@
 
 #include <assert.h>
 
-#include "../utils/utils.h"
-#include "../webp/format_constants.h"  // RIFF constants
-#include "../webp/mux_types.h"         // ALPHA_FLAG
-#include "./vp8enci.h"
+#include "port_webp/utils/utils.h"
+#include "port_webp/webp/format_constants.h"  // RIFF constants
+#include "port_webp/webp/mux_types.h"         // ALPHA_FLAG
+#include "port_webp/enc/vp8enci.h"
 
 //------------------------------------------------------------------------------
 // Helper functions

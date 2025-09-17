@@ -14,9 +14,9 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <string.h>
-#include "./huffman_encode.h"
-#include "../utils/utils.h"
-#include "../webp/format_constants.h"
+#include "port_webp/utils/huffman_encode.h"
+#include "port_webp/utils/utils.h"
+#include "port_webp/webp/format_constants.h"
 
 // -----------------------------------------------------------------------------
 // Util function to optimize the symbol map for RLE coding

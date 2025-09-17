@@ -12,13 +12,13 @@
 // Author: Skal (pascal.massimino@gmail.com)
 
 #include <stdlib.h>
-#include "./alphai.h"
-#include "./vp8i.h"
-#include "./vp8li.h"
-#include "../dsp/dsp.h"
-#include "../utils/quant_levels_dec.h"
-#include "../utils/utils.h"
-#include "../webp/format_constants.h"
+#include "port_webp/dec/alphai.h"
+#include "port_webp/dec/vp8i.h"
+#include "port_webp/dec/vp8li.h"
+#include "port_webp/dsp/dsp.h"
+#include "port_webp/utils/quant_levels_dec.h"
+#include "port_webp/utils/utils.h"
+#include "port_webp/webp/format_constants.h"
 
 //------------------------------------------------------------------------------
 // ALPHDecoder object.

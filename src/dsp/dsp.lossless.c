@@ -13,14 +13,14 @@
 //          Jyrki Alakuijala (jyrki@google.com)
 //          Urvang Joshi (urvang@google.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #include <math.h>
 #include <stdlib.h>
-#include "../dec/vp8li.h"
-#include "../utils/endian_inl.h"
-#include "./lossless.h"
-#include "./yuv.h"
+#include "port_webp/dec/vp8li.h"
+#include "port_webp/utils/endian_inl.h"
+#include "port_webp/dsp/lossless.h"
+#include "port_webp/dsp/yuv.h"
 
 #define MAX_DIFF_COST (1e30f)
 

@@ -20,9 +20,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "./cost.h"
-#include "./vp8enci.h"
-#include "../utils/utils.h"
+#include "port_webp/enc/cost.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/utils/utils.h"
 
 #if !defined(DISABLE_TOKEN_BUFFER)
 

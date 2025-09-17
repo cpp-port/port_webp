@@ -11,7 +11,7 @@
 //
 // Author: Urvang (urvang@google.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 #include <assert.h>
 #include <stdlib.h>
 #include <string.h>

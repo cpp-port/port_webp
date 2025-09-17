@@ -12,7 +12,7 @@
 // Author: Skal (pascal.massimino@gmail.com)
 
 #include <string.h>
-#include "./random.h"
+#include "port_webp/utils/random.h"
 
 //------------------------------------------------------------------------------
 

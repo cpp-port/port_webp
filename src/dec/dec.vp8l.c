@@ -14,13 +14,13 @@
 
 #include <stdlib.h>
 
-#include "./alphai.h"
-#include "./vp8li.h"
-#include "../dsp/dsp.h"
-#include "../dsp/lossless.h"
-#include "../dsp/yuv.h"
-#include "../utils/huffman.h"
-#include "../utils/utils.h"
+#include "port_webp/dec/alphai.h"
+#include "port_webp/dec/vp8li.h"
+#include "port_webp/dsp/dsp.h"
+#include "port_webp/dsp/lossless.h"
+#include "port_webp/dsp/yuv.h"
+#include "port_webp/utils/huffman.h"
+#include "port_webp/utils/utils.h"
 
 #define NUM_ARGB_CACHE_ROWS          16
 

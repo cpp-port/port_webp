@@ -10,15 +10,15 @@
 // Author: Jyrki Alakuijala (jyrki@google.com)
 //
 #ifdef HAVE_CONFIG_H
-#include "../webp/config.h"
+#include "port_webp/webp/config.h"
 #endif
 
 #include <math.h>
 
-#include "./backward_references.h"
-#include "./histogram.h"
-#include "../dsp/lossless.h"
-#include "../utils/utils.h"
+#include "port_webp/enc/backward_references.h"
+#include "port_webp/enc/histogram.h"
+#include "port_webp/dsp/lossless.h"
+#include "port_webp/utils/utils.h"
 
 #define MAX_COST 1.e38
 

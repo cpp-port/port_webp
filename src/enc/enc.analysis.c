@@ -15,9 +15,9 @@
 #include <string.h>
 #include <assert.h>
 
-#include "./vp8enci.h"
-#include "./cost.h"
-#include "../utils/utils.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/enc/cost.h"
+#include "port_webp/utils/utils.h"
 
 #define MAX_ITERS_K_MEANS  6
 

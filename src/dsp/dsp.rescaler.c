@@ -9,8 +9,8 @@
 //
 // Rescaling functions
 
-#include "./dsp.h"
-#include "../utils/rescaler.h"
+#include "port_webp/dsp/dsp.h"
+#include "port_webp/utils/rescaler.h"
 
 //------------------------------------------------------------------------------
 // Implementations of critical functions ImportRow / ExportRow

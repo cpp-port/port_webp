@@ -9,7 +9,7 @@
 //
 // AVX2 version of speed-critical encoding functions.
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(WEBP_USE_AVX2)
 

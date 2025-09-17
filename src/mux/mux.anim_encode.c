@@ -14,10 +14,10 @@
 #include <limits.h>
 #include <stdio.h>
 
-#include "../utils/utils.h"
-#include "../webp/decode.h"
-#include "../webp/format_constants.h"
-#include "../webp/mux.h"
+#include "port_webp/utils/utils.h"
+#include "port_webp/webp/decode.h"
+#include "port_webp/webp/format_constants.h"
+#include "port_webp/webp/mux.h"
 
 //------------------------------------------------------------------------------
 // Internal structs.

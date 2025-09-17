@@ -11,7 +11,7 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./vp8enci.h"
+#include "port_webp/enc/vp8enci.h"
 
 //------------------------------------------------------------------------------
 // Default probabilities

@@ -13,8 +13,8 @@
 
 #include <assert.h>
 #include <stdlib.h>
-#include "../dsp/dsp.h"
-#include "./rescaler.h"
+#include "port_webp/dsp/dsp.h"
+#include "port_webp/utils/rescaler.h"
 
 //------------------------------------------------------------------------------
 

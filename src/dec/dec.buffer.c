@@ -13,9 +13,9 @@
 
 #include <stdlib.h>
 
-#include "./vp8i.h"
-#include "./webpi.h"
-#include "../utils/utils.h"
+#include "port_webp/dec/vp8i.h"
+#include "port_webp/dec/webpi.h"
+#include "port_webp/utils/utils.h"
 
 //------------------------------------------------------------------------------
 // WebPDecBuffer

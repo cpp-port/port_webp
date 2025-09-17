@@ -9,11 +9,11 @@
 //
 // Author: Djordje Pesut (djordje.pesut@imgtec.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(WEBP_USE_MIPS_DSP_R2)
 
-#include "../enc/cost.h"
+#include "port_webp/enc/cost.h"
 
 static int GetResidualCost(int ctx0, const VP8Residual* const res) {
   int temp0, temp1;

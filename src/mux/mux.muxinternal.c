@@ -13,8 +13,8 @@
 //          Vikas (vikasa@google.com)
 
 #include <assert.h>
-#include "./muxi.h"
-#include "../utils/utils.h"
+#include "port_webp/mux/muxi.h"
+#include "port_webp/utils/utils.h"
 
 #define UNDEFINED_CHUNK_SIZE (-1)
 

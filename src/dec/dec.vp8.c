@@ -13,12 +13,12 @@
 
 #include <stdlib.h>
 
-#include "./alphai.h"
-#include "./vp8i.h"
-#include "./vp8li.h"
-#include "./webpi.h"
-#include "../utils/bit_reader_inl.h"
-#include "../utils/utils.h"
+#include "port_webp/dec/alphai.h"
+#include "port_webp/dec/vp8i.h"
+#include "port_webp/dec/vp8li.h"
+#include "port_webp/dec/webpi.h"
+#include "port_webp/utils/bit_reader_inl.h"
+#include "port_webp/utils/utils.h"
 
 //------------------------------------------------------------------------------
 

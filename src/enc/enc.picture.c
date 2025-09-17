@@ -14,9 +14,9 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "./vp8enci.h"
-#include "../dsp/dsp.h"
-#include "../utils/utils.h"
+#include "port_webp/enc/vp8enci.h"
+#include "port_webp/dsp/dsp.h"
+#include "port_webp/utils/utils.h"
 
 //------------------------------------------------------------------------------
 // WebPPicture

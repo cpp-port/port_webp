@@ -12,13 +12,13 @@
 // Author(s): Darko Laus (darko.laus@imgtec.com)
 //            Mirko Raus (mirko.raus@imgtec.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(WEBP_USE_MIPS_DSP_R2)
 
-#include "./mips_macro.h"
-#include "../enc/cost.h"
-#include "../enc/vp8enci.h"
+#include "port_webp/dsp/mips_macro.h"
+#include "port_webp/enc/cost.h"
+#include "port_webp/enc/vp8enci.h"
 
 static const int kC1 = 20091 + (1 << 16);
 static const int kC2 = 35468;

@@ -11,7 +11,7 @@
 //
 // Author: Christian Duvivier (cduvivier@google.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #if defined(__ANDROID__)
 #if defined(WEBP_ANDROID_NEON)  // NB: needs to be before generic NEON test.

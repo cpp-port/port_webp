@@ -11,13 +11,13 @@
 //
 // Author: Skal (pascal.massimino@gmail.com)
 
-#include "./dsp.h"
+#include "port_webp/dsp/dsp.h"
 
 #include <assert.h>
 
 #if defined(WEBP_USE_SSE2)
 #include <emmintrin.h>
-#include "./lossless.h"
+#include "port_webp/dsp/lossless.h"
 
 //------------------------------------------------------------------------------
 // Predictor Transform

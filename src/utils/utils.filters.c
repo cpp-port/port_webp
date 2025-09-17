@@ -11,7 +11,7 @@
 //
 // Author: Urvang (urvang@google.com)
 
-#include "./filters.h"
+#include "port_webp/utils/filters.h"
 #include <stdlib.h>
 #include <string.h>
 

@@ -13,11 +13,11 @@
 #include <assert.h>
 #include <math.h>
 
-#include "./backward_references.h"
-#include "./histogram.h"
-#include "../dsp/lossless.h"
-#include "../utils/color_cache.h"
-#include "../utils/utils.h"
+#include "port_webp/enc/backward_references.h"
+#include "port_webp/enc/histogram.h"
+#include "port_webp/dsp/lossless.h"
+#include "port_webp/utils/color_cache.h"
+#include "port_webp/utils/utils.h"
 
 #define VALUES_IN_BYTE 256
 
