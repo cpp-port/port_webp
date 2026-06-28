@@ -15,7 +15,15 @@
 
 #if defined(__ANDROID__)
 #if defined(WEBP_ANDROID_NEON)  // NB: needs to be before generic NEON test.
+#if defined(__has_include)
+#if __has_include(<cpu_features/cpu-features.h>)
 #include <cpu_features/cpu-features.h>
+#elif __has_include(<cpufeatures/cpu-features.h>)
+#include <cpufeatures/cpu-features.h>
+#endif
+#else
+#include <cpu_features/cpu-features.h>
+#endif
 #endif
 #endif
 
