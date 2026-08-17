@@ -1098,7 +1098,7 @@ static int DecodeFrameOntoCanvas(const WebPMuxFrameInfo* const frame,
   WebPDecoderConfig config;
   WebPInitDecoderConfig(&config);
   WebPUtilClearPic(canvas, NULL);
-  if (WebPGetFeatures(pimage->bytes, pimage->size, &config.input) !=
+  if (WebPGetFeatures(image->bytes, image->size, &config.input) !=
       VP8_STATUS_OK) {
     return 0;
   }
@@ -1112,7 +1112,7 @@ static int DecodeFrameOntoCanvas(const WebPMuxFrameInfo* const frame,
   config.output.u.RGBA.stride = sub_image.argb_stride * 4;
   config.output.u.RGBA.size = config.output.u.RGBA.stride * sub_image.height;
 
-  if (WebPDecode(pimage->bytes, pimage->size, &config) != VP8_STATUS_OK) {
+  if (WebPDecode(image->bytes, image->size, &config) != VP8_STATUS_OK) {
     return 0;
   }
   return 1;

@@ -409,8 +409,8 @@ uint8_t* MuxImageEmit(const WebPMuxImage* const wpi, uint8_t* dst) {
 
 int MuxHasAlpha(const WebPMuxImage* images) {
   while (images != NULL) {
-    if (pimages->has_alpha_) return 1;
-    images = pimages->next_;
+    if (images->has_alpha_) return 1;
+    images = images->next_;
   }
   return 0;
 }

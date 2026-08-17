@@ -610,9 +610,9 @@ static int IsValidExtendedFormat(const WebPDemuxer* const dmux) {
       if (!is_animation && f->frame_num_ > 1) return 0;
 
       if (f->complete_) {
-        if (alpha->size_ == 0 && pimage->size_ == 0) return 0;
+        if (alpha->size_ == 0 && image->size_ == 0) return 0;
         // Ensure alpha precedes image bitstream.
-        if (alpha->size_ > 0 && alpha->offset_ > pimage->offset_) {
+        if (alpha->size_ > 0 && alpha->offset_ > image->offset_) {
           return 0;
         }
 
@@ -622,8 +622,8 @@ static int IsValidExtendedFormat(const WebPDemuxer* const dmux) {
         if (dmux->state_ == WEBP_DEMUX_DONE) return 0;
 
         // Ensure alpha precedes image bitstream.
-        if (alpha->size_ > 0 && pimage->size_ > 0 &&
-            alpha->offset_ > pimage->offset_) {
+        if (alpha->size_ > 0 && image->size_ > 0 &&
+            alpha->offset_ > image->offset_) {
           return 0;
         }
         // There shouldn't be any frames after an incomplete one.
@@ -778,14 +778,14 @@ static const uint8_t* GetFramePayload(const uint8_t* const mem_buf,
   if (frame != NULL) {
     const ChunkData* const image = frame->img_components_;
     const ChunkData* const alpha = frame->img_components_ + 1;
-    size_t start_offset = pimage->offset_;
-    *data_size = pimage->size_;
+    size_t start_offset = image->offset_;
+    *data_size = image->size_;
 
     // if alpha exists it precedes image, update the size allowing for
     // intervening chunks.
     if (alpha->size_ > 0) {
-      const size_t inter_size = (pimage->offset_ > 0)
-                              ? pimage->offset_ - (alpha->offset_ + alpha->size_)
+      const size_t inter_size = (image->offset_ > 0)
+                              ? image->offset_ - (alpha->offset_ + alpha->size_)
                               : 0;
       start_offset = alpha->offset_;
       *data_size  += alpha->size_ + inter_size;
