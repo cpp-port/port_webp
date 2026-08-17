@@ -148,7 +148,7 @@ static WebPMuxError GetImageData(const WebPData* const bitstream,
     }
     WebPMuxDelete(mux);
   }
-  *is_lossless = VP8LCheckSignature(image->bytes, image->size);
+  *is_lossless = VP8LCheckSignature(pimage->bytes, pimage->size);
   return WEBP_MUX_OK;
 }
 
@@ -288,8 +288,8 @@ WebPMuxError WebPMuxPushFrame(WebPMux* mux, const WebPMuxFrameInfo* frame,
 
   if (mux->images_ != NULL) {
     const WebPMuxImage* const image = mux->images_;
-    const uint32_t image_id = (image->header_ != NULL) ?
-        ChunkGetIdFromTag(image->header_->tag_) : WEBP_CHUNK_IMAGE;
+    const uint32_t image_id = (pimage->header_ != NULL) ?
+        ChunkGetIdFromTag(pimage->header_->tag_) : WEBP_CHUNK_IMAGE;
     if (image_id != frame->id) {
       return WEBP_MUX_INVALID_ARGUMENT;  // Conflicting frame types.
     }
@@ -507,8 +507,8 @@ static WebPMuxError CreateVP8XChunk(WebPMux* const mux) {
 
   assert(mux != NULL);
   images = mux->images_;  // First image.
-  if (images == NULL || images->img_ == NULL ||
-      images->img_->data_.bytes == NULL) {
+  if (images == NULL || pimages->img_ == NULL ||
+      pimages->img_->data_.bytes == NULL) {
     return WEBP_MUX_INVALID_ARGUMENT;
   }
 
@@ -527,11 +527,11 @@ static WebPMuxError CreateVP8XChunk(WebPMux* const mux) {
   if (mux->xmp_ != NULL && mux->xmp_->data_.bytes != NULL) {
     flags |= XMP_FLAG;
   }
-  if (images->header_ != NULL) {
-    if (images->header_->tag_ == kChunks[IDX_FRGM].tag) {
+  if (pimages->header_ != NULL) {
+    if (pimages->header_->tag_ == kChunks[IDX_FRGM].tag) {
       // This is a fragmented image.
       flags |= FRAGMENTS_FLAG;
-    } else if (images->header_->tag_ == kChunks[IDX_ANMF].tag) {
+    } else if (pimages->header_->tag_ == kChunks[IDX_ANMF].tag) {
       // This is an image with animation.
       flags |= ANIMATION_FLAG;
     }

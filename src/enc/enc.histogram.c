@@ -315,7 +315,7 @@ static void HistogramBuild(
     VP8LHistogramSet* const image_histo) {
   int x = 0, y = 0;
   const int histo_xsize = VP8LSubSampleSize(xsize, histo_bits);
-  VP8LHistogram** const histograms = image_histo->histograms;
+  VP8LHistogram** const histograms = pimage_histo->histograms;
   VP8LRefsCursor c = VP8LRefsCursorInit(backward_refs);
   assert(histo_bits > 0);
   while (VP8LRefsCursorOk(&c)) {
@@ -337,7 +337,7 @@ static void HistogramCopyAndAnalyze(
   int i;
   const int histo_size = orig_histo->size;
   VP8LHistogram** const orig_histograms = orig_histo->histograms;
-  VP8LHistogram** const histograms = image_histo->histograms;
+  VP8LHistogram** const histograms = pimage_histo->histograms;
   for (i = 0; i < histo_size; ++i) {
     VP8LHistogram* const histo = orig_histograms[i];
     UpdateHistogramCost(histo);
@@ -351,8 +351,8 @@ static void HistogramCopyAndAnalyze(
 static void HistogramAnalyzeEntropyBin(VP8LHistogramSet* const image_histo,
                                        int16_t* const bin_map, int low_effort) {
   int i;
-  VP8LHistogram** const histograms = image_histo->histograms;
-  const int histo_size = image_histo->size;
+  VP8LHistogram** const histograms = pimage_histo->histograms;
+  const int histo_size = pimage_histo->size;
   const int bin_depth = histo_size + 1;
   DominantCostRange cost_range;
   DominantCostRangeInit(&cost_range);
@@ -384,10 +384,10 @@ static void HistogramAnalyzeEntropyBin(VP8LHistogramSet* const image_histo,
 
 // Compact the histogram set by removing unused entries.
 static void HistogramCompactBins(VP8LHistogramSet* const image_histo) {
-  VP8LHistogram** const histograms = image_histo->histograms;
+  VP8LHistogram** const histograms = pimage_histo->histograms;
   int i, j;
 
-  for (i = 0, j = 0; i < image_histo->size; ++i) {
+  for (i = 0, j = 0; i < pimage_histo->size; ++i) {
     if (histograms[i] != NULL && histograms[i]->bit_cost_ != 0.) {
       if (j < i) {
         histograms[j] = histograms[i];
@@ -396,7 +396,7 @@ static void HistogramCompactBins(VP8LHistogramSet* const image_histo) {
       ++j;
     }
   }
-  image_histo->size = j;
+  pimage_histo->size = j;
 }
 
 static VP8LHistogram* HistogramCombineEntropyBin(
@@ -405,7 +405,7 @@ static VP8LHistogram* HistogramCombineEntropyBin(
     int16_t* const bin_map, int bin_depth, int num_bins,
     double combine_cost_factor, int low_effort) {
   int bin_id;
-  VP8LHistogram** const histograms = image_histo->histograms;
+  VP8LHistogram** const histograms = pimage_histo->histograms;
 
   for (bin_id = 0; bin_id < num_bins; ++bin_id) {
     const int bin_offset = bin_id * bin_depth;
@@ -618,9 +618,9 @@ static void InvalidatePairs(int idx1, int idx2,
 static int HistogramCombineGreedy(VP8LHistogramSet* const image_histo,
                                   VP8LHistogram* const histos) {
   int ok = 0;
-  int image_histo_size = image_histo->size;
+  int image_histo_size = pimage_histo->size;
   int i, j;
-  VP8LHistogram** const histograms = image_histo->histograms;
+  VP8LHistogram** const histograms = pimage_histo->histograms;
   // Indexes of remaining histograms.
   int* const clusters = WebPSafeMalloc(image_histo_size, sizeof(*clusters));
   // Heap of histogram pairs.
@@ -682,7 +682,7 @@ static int HistogramCombineGreedy(VP8LHistogramSet* const image_histo,
     }
   }
 
-  image_histo->size = image_histo_size;
+  pimage_histo->size = image_histo_size;
   ok = 1;
 
  End:
@@ -699,12 +699,12 @@ static VP8LHistogram* HistogramCombineStochastic(
   int iter;
   uint32_t seed = 0;
   int tries_with_no_success = 0;
-  int image_histo_size = image_histo->size;
+  int image_histo_size = pimage_histo->size;
   const int iter_mult = (quality < 25) ? 2 : 2 + (quality - 25) / 8;
   const int outer_iters = image_histo_size * iter_mult;
   const int num_pairs = image_histo_size / 2;
   const int num_tries_no_success = outer_iters / 2;
-  VP8LHistogram** const histograms = image_histo->histograms;
+  VP8LHistogram** const histograms = pimage_histo->histograms;
 
   // Collapse similar histograms in 'image_histo'.
   ++min_cluster_size;
@@ -754,7 +754,7 @@ static VP8LHistogram* HistogramCombineStochastic(
       break;
     }
   }
-  image_histo->size = image_histo_size;
+  pimage_histo->size = image_histo_size;
   return best_combo;
 }
 
@@ -768,9 +768,9 @@ static void HistogramRemap(const VP8LHistogramSet* const orig_histo,
                            uint16_t* const symbols) {
   int i;
   VP8LHistogram** const orig_histograms = orig_histo->histograms;
-  VP8LHistogram** const histograms = image_histo->histograms;
+  VP8LHistogram** const histograms = pimage_histo->histograms;
   const int orig_histo_size = orig_histo->size;
-  const int image_histo_size = image_histo->size;
+  const int image_histo_size = pimage_histo->size;
   if (image_histo_size > 1) {
     for (i = 0; i < orig_histo_size; ++i) {
       int best_out = 0;
@@ -878,7 +878,7 @@ int VP8LGetHistoImageSymbols(int xsize, int ysize,
     cur_combo = HistogramCombineStochastic(image_histo,
                                            tmp_histos->histograms[0],
                                            cur_combo, quality, threshold_size);
-    if ((image_histo->size <= threshold_size) &&
+    if ((pimage_histo->size <= threshold_size) &&
         !HistogramCombineGreedy(image_histo, cur_combo)) {
       goto Error;
     }

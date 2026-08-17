@@ -79,8 +79,8 @@ int MuxImageFinalize(WebPMuxImage* const wpi) {
   int w, h;
   int vp8l_has_alpha = 0;
   const int ok = is_lossless ?
-      VP8LGetInfo(image->bytes, image->size, &w, &h, &vp8l_has_alpha) :
-      VP8GetInfo(image->bytes, image->size, image->size, &w, &h);
+      VP8LGetInfo(pimage->bytes, pimage->size, &w, &h, &vp8l_has_alpha) :
+      VP8GetInfo(pimage->bytes, pimage->size, pimage->size, &w, &h);
   assert(img != NULL);
   if (ok) {
     // Ignore ALPH chunk accompanying VP8L.
