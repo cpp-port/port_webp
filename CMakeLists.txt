@@ -144,7 +144,7 @@ add_library(${PROJECT_NAME} SHARED ${library_source})
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE OPJ_EXPORTS)
 
-if(ANDROID)
+if(__ANDROID__)
     set(ANDROID_CPU_FEATURES_ROOT "${ANDROID_NDK}/sources/android")
     set(ANDROID_CPU_FEATURES_SOURCE "${ANDROID_CPU_FEATURES_ROOT}/cpufeatures/cpu-features.c")
 
